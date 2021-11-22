@@ -5,3 +5,12 @@ output: pdf_document
 ---
 
 Outline
+
+Introduction
+-seabirds are an important top predator in marine environment
+-some small seabirds, like terns, are central place foragers that consume transient fishes
+-knowledge surrounding forage fishes is lacking 
+-seabirds, including terns, might be useful indicators of forage fishes
+-here, we explore tern diet over 20+ years with an eye toward their use as bioindicators
+
+  Seabirds are predatory in marine environments, often representing a top trophic position in their ecosystem. 
