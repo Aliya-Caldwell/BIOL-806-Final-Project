@@ -77,7 +77,10 @@ tprov<-fisheffort %>%
   dplyr::rename(abundance=`relative abundance (fish per nest min)`)
 
 
-
+#remove non-fish species and bad years
+tprovfish<-tprov %>%
+  filter(! year %in% c(2003, 2004, 2010, 2012, 2016)) %>% 
+  filter(! prey %in% c("unknown", "unknown fish", "other"))
 
 
 ## calculate shannon diversity
@@ -91,4 +94,7 @@ tprovshannon<-tprov %>%
 
 ggplot(tprovshannon)+theme_classic()+
   geom_point(aes(x=year,y=H))+
-  geom_line(aes(x=year,y=H))
+  geom_line(aes(x=year,y=H))+
+  ylab("Shannon Diversity")+xlab("")+
+  scale_x_continuous(breaks = seq(1999, 2020, by = 1))
+  

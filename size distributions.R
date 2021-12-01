@@ -19,8 +19,7 @@ library(wesanderson)
 ## CLEAN UP MAIN DATAFRAME ##
 #===========================#
 getwd()
-setwd("/Users/aliyacaldwell/Box/SMLTernsProgram/Raw data/Feeding data")
-setwd("C:/Users/aec1075/Box/SMLTernsProgram/Raw data/Feeding data")
+setwd("/Users/aliyacaldwell/Box/SML Tern Program/Raw data/Feeding data")
 
 df<-read.csv("T-Feeding up to 2020.csv",fileEncoding="UTF-8-BOM")
 

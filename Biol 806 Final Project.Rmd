@@ -13,4 +13,106 @@ Introduction
 -seabirds, including terns, might be useful indicators of forage fishes
 -here, we explore tern diet over 20+ years with an eye toward their use as bioindicators
 
-  Seabirds are predatory in marine environments, often representing a top trophic position in their ecosystem. 
+  Predator-prey interactions can shape ecosystems in marine environments. These 
+  
+  
+``` {r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=5, fig.cap="\\label{fig:preyspeciesproportions} Proportions of fish species in the Common Tern diet from 1999 to 2020 plotted with total landings in black. Fish in the "other/unknown" category include fishes that weren't able to be identified as well as any species making up <1% of the tern diet. Years with low sample sizes are excluded."}
+## this code chunk contains the creation of the tprov df which i use for a number of figures, along with a figure showing fish species proportions in the tern diet through time plotted with relative abundance on top##
+
+rm(list=ls())
+library(ggplot2)
+library(plyr)
+library(dplyr)
+library(tidyr)
+library(grid)
+library(palettetown)
+library(colorspace)
+library(RColorBrewer)
+library(pals)
+
+setwd("/Users/aliyacaldwell/Box/SML Tern Program/Raw data/Feeding data")
+
+df<-read.csv("T-Feeding up to 2020.csv",fileEncoding="UTF-8-BOM")
+
+dfclean<-df %>%
+  dplyr::rename(size='PreySizeMM') %>%
+  dplyr::rename(prey='PreyFamily') %>%
+  dplyr::rename(method='ObservationType') %>%
+  dplyr::rename(year='Year') %>%
+  dplyr::rename(day='DayOfYear') %>%
+  dplyr::rename(week='WeekOf.Year') %>%
+  dplyr::rename(month='Month') %>%
+  dplyr::rename(watchtime='WatchDurationMM') %>%
+  dplyr::rename(nestswatched='NumberNestsObserved') %>%
+  dplyr::rename(event='Event')
+
+#sampling effort
+effort<-dfclean %>%
+  filter(!IncludeForRegression %in% c("no")) %>% 
+  dplyr::mutate(`sampling effort`=(watchtime*as.numeric(nestswatched))) %>%
+  group_by(year) %>%
+  dplyr::summarise(`Effort (nest mins)`=sum(`sampling effort`, na.rm=T))
+
+#diet data
+fish<-dfclean %>%
+  filter(! event %in% c("end","start")) %>% 
+  filter(! prey %in% c("")) %>% 
+  group_by(year,prey) %>%
+  dplyr::summarise(n=n(), meansize=mean(as.numeric(size),na.rm=T), mediansize=median(as.numeric(size),na.rm=T)) %>%
+  dplyr::mutate(prop=n/sum(n))
+
+#combine and generate relative abundance
+fisheffort<-merge(effort,fish) %>%
+  mutate(`relative abundance (fish per nest min)`=(n/`Effort (nest mins)`))
+
+#FINAL DATAFRAME (remove intermediate effort column, rename columns for easy use)
+tprov<-fisheffort %>%
+  dplyr::select(year, prey, n, meansize, mediansize, `Effort (nest mins)`, prop, `relative abundance (fish per nest min)`) %>%
+  dplyr::rename(proportion=prop) %>%
+  dplyr::rename(abundance=`relative abundance (fish per nest min)`)
+
+
+#=======================================================#
+## PLOTTING the PROPORTIONS of PREY ITEMS in THE DIET  ##
+#=======================================================#
+
+#main five prey categories, good sample size years tern data
+#----------------------------------------------------------#
+tprovsub<-tprov %>%
+  mutate(preysub=preysub<-ifelse(grepl(paste(c("herring","lumpfish","hake","butterfish","sandlance","mackerel","bluefish","cunner","pollock","mummichog","stickleback"),
+                                             collapse="|"), prey, ignore.case=T), prey, "other/unknown")) %>%
+  filter(! year %in% c(2003, 2004, 2010, 2012))
+
+tprovsub[,9]=toupper(tprovsub[,9]) #make prey uppercase
+
+#total relative abundance, good sample years (i.e. "total relative landings") 
+tprovabundance<-tprov %>%
+  dplyr::group_by(year) %>%
+  dplyr::summarise(totalabundance=sum(abundance)) %>%
+  filter(! year %in% c(2003, 2004, 2010, 2012))
+
+ggplot()+
+  geom_col(data=tprovsub,aes(x=year, y=proportion, fill=preysub))+theme_bw()+
+  ylab("Proportion of Total Observations")+xlab("Year")+
+  theme(axis.text = element_text(size=12), axis.title = element_text(size=10),
+        legend.text = element_text(size=12),legend.title = element_text(size=10),
+        panel.grid.major=element_blank(), panel.grid.minor=element_blank())+
+  scale_x_continuous(expand=c(0,0.01))+scale_y_continuous(expand=c(0,0.001))+
+  labs(fill="Prey")+
+  scale_fill_poke(pokemon="surskit", spread=12)+
+  geom_point(data=tprovabundance, aes(x=year, y=totalabundance*20),size=2)+
+  geom_line(data=tprovabundance, aes(x=year, y=totalabundance*20), size=1)+
+  scale_x_continuous(expand=c(0,0.01),name="Year")+
+  scale_y_continuous(expand=c(0,0.001),
+                     name="Proportion in diet", sec.axis=sec_axis(~./20, name="Total abundance (fish/nest min)"))+
+  theme(legend.title = element_text( size=10), legend.text=element_text(size=10))+theme(legend.key.size = unit(0.9,"line"))
+
+```
+
+
+
+
+
+
+
+

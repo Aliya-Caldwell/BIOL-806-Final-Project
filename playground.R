@@ -268,8 +268,7 @@ tprovsub<-tprov %>%
 
 tprovsub[,9]=toupper(tprovsub[,9]) #make prey uppercase
 
-
-speciesprop<-ggplot(tprovsub)+
+ggplot(tprovsub)+
   geom_col(aes(x=year, y=proportion, fill=preysub))+theme_bw()+
   ylab("Proportion of Total Observations")+xlab("Year")+
   theme(axis.text = element_text(size=12), axis.title = element_text(size=15),
@@ -410,8 +409,8 @@ ggplot(tprovsub)+theme_bw()+
 #total relative abundance, good sample years (i.e. "total relative landings") TERNS
 #----------------------------------------------------------------------------------#
 tprovyrs<-tprov %>%
-  group_by(year) %>%
-  summarise(totalabundance=sum(abundance)) %>%
+  dplyr::group_by(year) %>%
+  dplyr::summarise(totalabundance=sum(abundance)) %>%
   filter(! year %in% c(2003, 2004, 2010, 2012))
 
 ggplot(tprovyrs)+theme_bw()+
@@ -427,12 +426,16 @@ ggplot()+
         panel.grid.major=element_blank(), panel.grid.minor=element_blank())+
   scale_x_continuous(expand=c(0,0.01))+scale_y_continuous(expand=c(0,0.001))+
   labs(fill="Prey")+
-  scale_fill_poke(pokemon="surskit", spread=8)+
+  scale_fill_poke(pokemon="surskit", spread=12)+
   geom_point(data=tprovyrs, aes(x=year, y=totalabundance*20),size=2)+
   geom_line(data=tprovyrs, aes(x=year, y=totalabundance*20), size=1)+
   scale_x_continuous(expand=c(0,0.01),name="Year")+
   scale_y_continuous(expand=c(0,0.001),
-                     name="Proportion in diet", sec.axis=sec_axis(~./20, name="Total abundance (fish/nest min)"))
+                     name="Proportion in diet", sec.axis=sec_axis(~./20, name="Total abundance (fish/nest min)"))+
+  theme(legend.title = element_text( size=9), legend.text=element_text(size=9))+theme(legend.key.size = unit(1,"line"))
+  
+  
+  
 #TO DO: make the line cut off for years without samples?
 
 # relative abundanc`e of certain species throughout the season for each year #
@@ -481,7 +484,7 @@ methodfish<-dfclean %>%
   filter(! event %in% c("end","start")) %>% 
   filter(! prey %in% c("")) %>% 
   group_by(method, prey) %>%
-  summarise(n=n(), meansize=mean(as.numeric(size),na.rm=T)) %>%
+  dplyr::summarise(n=n(), meansize=mean(as.numeric(size),na.rm=T)) %>%
   mutate(prop=n/sum(n))
 
 methodfisheffort<-merge(effort,methodfish) %>%
