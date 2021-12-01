@@ -6,7 +6,7 @@ output: pdf_document
 
 Outline
 
-Introduction
+## Introduction
 -seabirds are an important top predator in marine environment
 -some small seabirds, like terns, are central place foragers that consume transient fishes
 -knowledge surrounding forage fishes is lacking 
@@ -14,8 +14,14 @@ Introduction
 -here, we explore tern diet over 20+ years with an eye toward their use as bioindicators
 
   Predator-prey interactions can shape ecosystems in marine environments. These 
-  
-  
+
+
+## Results
+
+### Diet Community
+
+Write some shit about diet community bar plot
+ 
 ``` {r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=5, fig.cap="\\label{fig:preyspeciesproportions} Proportions of fish species in the Common Tern diet from 1999 to 2020 plotted with total landings in black. Fish in the "other/unknown" category include fishes that weren't able to be identified as well as any species making up <1% of the tern diet. Years with low sample sizes are excluded."}
 ## this code chunk contains the creation of the tprov df which i use for a number of figures, along with a figure showing fish species proportions in the tern diet through time plotted with relative abundance on top##
 
@@ -112,7 +118,114 @@ ggplot()+
 
 
 
+Write some shit about diet community NMDS
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=5, fig.cap="\\label{fig:preyspeciesNMDS} Plot showingNMDS results for Common Tern diet data from 1999 to 2020. Species that make up <1% of the diet are excluded, as are samples from years with low sample sizes.."}
+#this code chunk contains an NMDS for tern prey items
+
+#============================#
+## NMDS for TERN PREY ITEMS ##
+#============================#
+library(vegan)
+library(moments)
+library(dplyr)
+
+#====================================================================================#
+## GENERAL USE DF with PROPORTION and RELATIVE ABUNDANCE for each DAY and WEEK of each YEAR ##
+#====================================================================================#
+
+#sampling effort
+dailyweeklyeffort<-dfclean %>%
+  dplyr::mutate(`sampling effort`=(watchtime*as.numeric(nestswatched)))%>%
+  group_by(year, week, day) %>%
+  dplyr::summarise(`Effort (nest mins)`=sum(`sampling effort`, na.rm=T))
+
+#diet data
+dailyweeklyfish<-dfclean %>%
+  filter(! event %in% c("end","start")) %>% 
+  filter(! prey %in% c("")) %>% 
+  group_by(year, week, day, prey) %>%
+  dplyr:: summarise(n=n(), meansize=mean(as.numeric(size),na.rm=T)) %>%
+  dplyr:: mutate(prop=n/sum(n))
+
+#combine and generate relative abundance
+dailyweeklyfisheffort<-merge(dailyweeklyeffort,dailyweeklyfish) %>%
+  dplyr::mutate(`relative abundance (fish per nest min)`=(n/`Effort (nest mins)`))
+
+#FINAL DATAFRAME (remove intermediate effort column, rename columns for easy use)
+dailyweeklytprov<-dailyweeklyfisheffort %>%
+  dplyr::select(year, week, day, prey, n, meansize, `Effort (nest mins)`,prop, `relative abundance (fish per nest min)`) %>%
+  dplyr::rename(proportion=prop) %>%
+  dplyr::rename(size=meansize) %>%
+  dplyr::rename(abundance=`relative abundance (fish per nest min)`)
+
+#subset
+tprovsub<-tprov %>%
+  mutate(preysub=preysub<-ifelse(grepl(paste(c("herring","hake","butterfish","sandlance","mackerel","pollock","unknown fish"),
+                                             collapse="|"), prey, ignore.case=T), prey, "other")) %>%
+  filter(! year %in% c(2003, 2004, 2010, 2012))
+
+dailyweeklytprovsub<-dailyweeklytprov %>%
+  filter(!year %in% c(2003, 2004, 2010, 2012)) %>%
+  filter(prey %in% c("herring","hake","butterfish","mackerel","sandlance", "bluefish","cunner","lumpfish",
+                     "mummichog","pollock","silverside","stickleback")) %>%
+  filter(!abundance>300000000) #im fucking annoying for fixing an issue this way but there were weird infinity values in the abundance column that needed to come out
+
+## start creating ordination
+
+dfNMDS0<-dailyweeklytprovsub %>%
+  dplyr::mutate(uniqueID=group_indices(.,year,day)) %>%
+  dplyr::select(uniqueID, prey, abundance, year, week) %>%
+  spread(prey, abundance) %>%
+  dplyr::mutate_all(~replace(., is.na(.),0))
+
+dfNMDS1<-dfNMDS0 %>%
+  dplyr::select(uniqueID, year, week) %>%
+  group_by(uniqueID) %>%
+  dplyr::summarise_all(funs(max))
+
+dfNMDS2<-dfNMDS0 %>%
+  dplyr::select(uniqueID,butterfish, hake, herring, mackerel, sandlance, bluefish, cunner, lumpfish,
+                mummichog, pollock, silverside, stickleback) %>%
+  group_by(uniqueID) %>%
+  dplyr::summarise_all(funs(sum))
+
+dfNMDS<-bind_cols(dfNMDS1, dfNMDS2) %>% 
+  dplyr::select(-uniqueID...4)
 
 
+NMDS_1ut<-dfNMDS[,4:12]
+NMDS_2<-dfNMDS[,1:3]
+
+terndiet_NMDS<-metaMDS(NMDS_1ut, distance = "bray", k = 2, try=250, autotransform=F)
+r2<-summary(lm(original.dist~dist(vegan::scores(terndiet_NMDS))))[[8]] #calculate the r-squared 
+actualStress<-terndiet_NMDS$stress #calculate the stress 
+
+#Ordination plots for the NMDS 2D results--put them into dfs for ggplot
+allNMDS_species_terns<-as.data.frame(terndiet_NMDS$species)
+allNMDS_samples_terns<-as.data.frame(terndiet_NMDS$points)
+allNMDS_env_terns<-as.data.frame(NMDS_2) %>% 
+  dplyr:: select(year,week, uniqueID...1) %>% 
+  mutate(binyear=cut(year, breaks=c(-Inf, 2003, 2007, 2011, 2015, Inf), labels=c("1999-2003","2004-2007","2008-2011","2011-2015","2016-2020"))) %>% 
+  mutate(binyeardecs=cut(year, breaks=c(-Inf, 2006, 2013, Inf), labels=c("1999-2006","2007-2013","2014-2020"))) %>% 
+  mutate(month=cut(week, breaks=c(-Inf, 22, 26, 30, Inf), labels=c("May","June","July","August")))
+
+#Plot filled by year
+ggplot()+theme_bw()+
+  theme(panel.grid.major=element_blank(), panel.grid.minor=element_blank())+
+  geom_point(data=allNMDS_samples_terns,aes(MDS1,MDS2, fill=allNMDS_env_terns$binyeardecs),shape=21,size=3,alpha=0.75)+ 
+  stat_ellipse(data=allNMDS_samples_terns,aes(MDS1,MDS2,color=allNMDS_env_terns$binyeardecs),lwd=1.1, linetype=2)+
+  geom_segment(data=allNMDS_species_terns,aes(x=0,y=0,xend=MDS1,yend=MDS2),color="grey50",lwd=1,alpha=0.7)+ 
+  geom_label(data=allNMDS_species_terns,aes(x=MDS1,y=MDS2,label=gsub("_","\n",rownames(allNMDS_species_terns))),fill="white",size=6)+
+  xlab("Axis 1")+ylab("Axis 2")+ 
+  geom_text(x=-1.6, y= 1.4, aes(-.65,1.27,label=paste("Stress =",round(actualStress,digits=4)*100)),size=4)+
+  scale_fill_manual(values=c("brown3","darkolivegreen","darkgoldenrod1"))+scale_color_manual(values=c("brown3","darkolivegreen","darkgoldenrod1"))+
+  guides(fill=guide_legend(title=""))+guides(color=FALSE)
+```
+
+
+
+
+Write some shit about Shannon Diversit
 
 

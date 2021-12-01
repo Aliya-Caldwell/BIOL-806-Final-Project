@@ -84,17 +84,17 @@ tprovfish<-tprov %>%
 
 
 ## calculate shannon diversity
-tprovshannon<-tprov %>% 
-  select(year,prey,proportion) %>% 
-  group_by(year) %>% 
-  summarise(H=sum((proportion)*log10(proportion)*-1))
+tprovshannon<-tprovfish %>% 
+  dplyr::select(year,prey,proportion) %>% 
+  dplyr::group_by(year) %>% 
+  dplyr::summarise(H=sum((proportion)*log10(proportion)*-1))
+  
 
 
 ## plot shannon diversity over time
-
 ggplot(tprovshannon)+theme_classic()+
   geom_point(aes(x=year,y=H))+
   geom_line(aes(x=year,y=H))+
-  ylab("Shannon Diversity")+xlab("")+
+  ylab("Shannon Diversity")+xlab("")#+
   scale_x_continuous(breaks = seq(1999, 2020, by = 1))
   
