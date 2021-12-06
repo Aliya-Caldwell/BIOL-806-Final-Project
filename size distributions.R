@@ -113,8 +113,8 @@ tprovsubsizeherr<-tprov %>%
 
 
 ggplot(tprovsubsizeherr)+theme_bw()+
-  geom_point(aes(x=year,y=ln(meansize), color=prey))+
-  geom_line(aes(x=year,y=ln(meansize), color=prey))+
+  geom_point(aes(x=year,y=meansize, color=prey))+
+  geom_line(aes(x=year,y=meansize, color=prey))+
   geom_point(aes(x=year,y=mediansize, color=prey), pch=21)+
   geom_line(aes(x=year,y=mediansize, color=prey), linetype="dashed")
 
