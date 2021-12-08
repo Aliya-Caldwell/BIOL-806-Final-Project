@@ -7,29 +7,33 @@ editor_options:
 ---
 
 ## INTRODUCTION
-  Predator-prey interactions can vary greatly over space and time, and can shape ecosystems in marine environments. The relationship between colonially breeding seabirds, which are central place foragers, and transient fishes represents one such relationship. Central place foraging seabirds return to the same breeding colonies each year, selecting their prey within a restricted distance from their colony and during specific times of year correlated to their breeding phenology. In contrast, forage fishes are transient in space and time, though they do maintain some degree of predictability, particularly during spawning seasons. Due to their central place foraging strategy, along with their sensitivity and ease of sampling, seabirds may be particularly well suited to track changes in the communities of their fish prey, which are more capable of undergoing shifts in space and time, especially across decadal time periods where long-term processes like climate change may impact their populations.
-  Here, I briefly explore the predator-prey relationships between Common Terns (<em> Sterna hirundo </em>) and their prey fishes, and the use of tern diet as an indicator of fish populations and communities. Common Terns are small, long-lived, and highly-migratory seabirds with high natal philopatry. In New Hampshire (NH), their population is restricted to a single breeding colony on White and Seavey Islands, 7 miles off the coast of the mainland. In the area, terns forage on small or juvenile fishes including herrings, hakes, sand lances, pollock/haddock, mackerel, and mummichog, among others. While all of these fish species serve important ecological mechanisms, others also represent important fisheries in the region. Therefore, understanding the predator-prey relationship between terns and forage fishes items over time is important for understanding how the tern diet community has shifted over time, but also for understanding the potential use of the predator-prey relationship for monitoring and predicting fish populations of economic importance. To examine these dyanimics, I first explore the entire tern prey community over more than 20 years, specifically asking how the community has shifted during that time and how variable the community is among years. Next, I use herring and hake, the two prey groups most often utilized by terns, as a case study to explore how seabird data might be used to track fish populations over time.
+Predator-prey interactions can vary greatly over space and time, and can shape ecosystems in marine environments. The relationship between colonially breeding seabirds, which are central place foragers, and transient fishes represents one such relationship. Central place foraging seabirds return to the same breeding colonies each year, selecting their prey within a restricted distance from their colony and during specific times of year correlated to their breeding phenology. In contrast, forage fishes are transient in space and time, though they do maintain some degree of predictability, particularly during spawning seasons. Due to their central place foraging strategy, along with their sensitivity and ease of sampling, seabirds may be particularly well suited to track changes in the communities of their fish prey, which are more capable of undergoing shifts in space and time, especially across decadal time periods where long-term processes like climate change may impact their populations.
+
+Here, I briefly explore the predator-prey relationships between Common Terns (<em> Sterna hirundo </em>) and their prey fishes, and the use of tern diet as an indicator of fish populations and communities. Common Terns are small, long-lived, and highly-migratory seabirds with high natal philopatry. In New Hampshire (NH), their population is restricted to a single breeding colony on White and Seavey Islands, 7 miles off the coast of the mainland. In the area, terns forage on small or juvenile fishes including herrings, hakes, sand lances, pollock/haddock, mackerel, and mummichog, among others. While all of these fish species serve important ecological mechanisms, others also represent important fisheries in the region. Therefore, understanding the predator-prey relationship between terns and forage fishes items over time is important for understanding how the tern diet community has shifted over time, but also for understanding the potential use of the predator-prey relationship for monitoring and predicting fish populations of economic importance. To examine these dyanimics, I first explore the entire tern prey community over more than 20 years, specifically asking how the community has shifted during that time and how variable the community is among years. Next, I use herring and hake, the two prey groups most often utilized by terns, as a case study to explore how seabird data might be used to track fish populations over time.
   
   
   
 ## METHODS
 
 ### Data Collection
-  The seabird diet data used for this study were collected annually from 1999 to 2020 on White and Seavey Islands, NH by the Shoals Marine Laboratory Tern Conservation Program. Diet data are collected during “diet watches” conducted during the chick rearing period, which spans from early June to early August of each year. In recent years (2017-present), diet watches are conducted at four specified sampling areas on the colony that are visible from one of two or three observation blinds. Before 2017, data were collected from six blinds at a higher number of diet sampling areas throughout the colony. At each of these areas, 5 to 10 nests are identified for monitoring throughout the season, resulting in sample sizes of 20 to 50 nests each year. As chicks fledge or die throughout the breeding season, new nests may be added to the study to maintain a balanced sample size colony-wide. Diet watches are conducted for a single diet area from the observation blind for a duration of 1 to 3 hours, during which time the observer monitors all the nests within the specified area. For each feeding that occurs during the watch, the observer collects data including event time, prey identity, estimated prey size (measured relative to the adult tern bill length), and chick fed (chicks are colored to indicate hatch order). In addition to live diet observations, 20-30 nests (some that overlap with live observation nests and others that do not) are monitored via remote automated video camera (Axis P5635-E) and GoPro video camera throughout the Common Tern chick rearing period. The cameras watch a single frame containing one or two nests at a time for a duration of 60-120 minutes. Videos are later analyzed to collect the same data types collected during live diet watches. 
+The seabird diet data used for this study were collected annually from 1999 to 2020 on White and Seavey Islands, NH by the Shoals Marine Laboratory Tern Conservation Program. Diet data are collected during “diet watches” conducted during the chick rearing period, which spans from early June to early August of each year. In recent years (2017-present), diet watches are conducted at four specified sampling areas on the colony that are visible from one of two or three observation blinds. Before 2017, data were collected from six blinds at a higher number of diet sampling areas throughout the colony. At each of these areas, 5 to 10 nests are identified for monitoring throughout the season, resulting in sample sizes of 20 to 50 nests each year. As chicks fledge or die throughout the breeding season, new nests may be added to the study to maintain a balanced sample size colony-wide. Diet watches are conducted for a single diet area from the observation blind for a duration of 1 to 3 hours, during which time the observer monitors all the nests within the specified area. For each feeding that occurs during the watch, the observer collects data including event time, prey identity, estimated prey size (measured relative to the adult tern bill length), and chick fed (chicks are colored to indicate hatch order). In addition to live diet observations, 20-30 nests (some that overlap with live observation nests and others that do not) are monitored via remote automated video camera (Axis P5635-E) and GoPro video camera throughout the Common Tern chick rearing period. The cameras watch a single frame containing one or two nests at a time for a duration of 60-120 minutes. Videos are later analyzed to collect the same data types collected during live diet watches. 
 
 ### Data Analysis
-  To characterize the tern prey community, variables for the proportion of each species in the tern diet and the relative abundance or catch per unit effort (CPUE, number of fish per unit sampling effort) of fish species in the diet were calculated for different time periods (weekly, monthly, yearly). Sampling effort was measured in "nest minutes", which describes the total amount of time spent observing nests during any specified time period (i.e. the total minutes of observation in a day). Though effort was accounted for, years with exceptionally low effort, such that the sample might no longer reflect the overall population, were excluded from the analyses. The metrics described above, along with fish size, were used for the subsequent analyses.
-  To characterize prey community over time, the proportion of each prey species in the tern diet, along with the total relative abundance of fishes caught by the study individuals, was explored. For this analysis, species making up <1% of the tern diet (by number over the entire timeseries) were lumped into a category designated "other". The proportion of species present in the diet over the two decades was explored visually and in comparison with total annual CPUE on the colony as well as annual prey species diversity measured via Shannon's Diversity Index. Next, non-metric multidimensional scaling analysis (NMDS; using R packages <em>'vegan'</em> and <em>'moments'</em>) was used to examine associations among prey items in the community over time. The observations for which the NMDS was run were the daily proportions of fish species in the tern diet (i.e. each observation comprises a single day's worth of data, for which species proportions were calculated to create a row in the distance matrix). NMDS models were run over 250 random starts using the Bray-Curtis distance measure. Models with stress levels <20 were considered useful and plotted in 2 dimensions with time bins (1999-2006, 2007-2013, and 2014-2020) overlaid to assess changes in prey community over time.
-  To assess changes in herring and hake populations and sizes over time, the CPUE for each species was summarised for each year and teh size data were converted from bill lengths to millimeters (mm) using the average bill length of adult tern sampled on the colony. Density plots were used to visualize changes in herring and hake size over time, and reggressions were run to further explore the relationships. 
+To characterize the tern prey community, variables for the proportion of each species in the tern diet and the relative abundance or catch per unit effort (CPUE, number of fish per unit sampling effort) of fish species in the diet were calculated for different time periods (weekly, monthly, yearly). Sampling effort was measured in "nest minutes", which describes the total amount of time spent observing nests during any specified time period (i.e. the total minutes of observation in a day). Though effort was accounted for, years with exceptionally low effort, such that the sample might no longer reflect the overall population, were excluded from the analyses. The metrics described above, along with fish size, were used for the subsequent analyses.
 
+To characterize prey community over time, the proportion of each prey species in the tern diet, along with the total relative abundance of fishes caught by the study individuals, was explored. For this analysis, species making up <1% of the tern diet (by number over the entire timeseries) were lumped into a category designated "other". The proportion of species present in the diet over the two decades was explored visually and in comparison with total annual CPUE on the colony as well as annual prey species diversity measured via Shannon's Diversity Index. Next, non-metric multidimensional scaling analysis (NMDS; using R packages <em>'vegan'</em> and <em>'moments'</em>) was used to examine associations among prey items in the community over time. The observations for which the NMDS was run were the daily proportions of fish species in the tern diet (i.e. each observation comprises a single day's worth of data, for which species proportions were calculated to create a row in the distance matrix). NMDS models were run over 250 random starts using the Bray-Curtis distance measure. Models with stress levels <20 were considered useful and plotted in 2 dimensions with time bins (1999-2006, 2007-2013, and 2014-2020) overlaid to assess changes in prey community over time.
+
+To assess changes in herring and hake populations and sizes over time, the CPUE for each species was summarised for each year and teh size data were converted from bill lengths to millimeters (mm) using the average bill length of adult tern sampled on the colony. Density plots were used to visualize changes in herring and hake size over time, and reggressions were run to further explore the relationships. 
+
+
+\newpage
 ## RESULTS
-
 ### Diet Community
+Figure \ref{fig:preyspeciesproportions}, shows some degree of variability in the proportion of fish species making up the diet as well as in the relative abundance of landings of all species combined. Species of herring and hake dominate the diet across the time series, in combination making up over 50% of the total landings in most years. That being said, like with other species, the two show a fair amount of variability year to year. 
 
-Figure \ref{fig:preyspeciesproportions}, shows a high degree of variability in the proportion of fish species making up the diet as well as in the relative abundance of landings of all species combined. Species of herring and hake appear to dominate the diet, in combination making up over 50% of the total landings in most years. That being said, like with other species, the two show a fair amount of variability.
+While we do see some variability in the proportion of species ingested by terns across years (Figure \ref{fig:preyspeciesproportions}), no clear directional trend presents itself when investigating dietary diversity over time (Shannon's Index;Figure \ref{fig:shannon}). However, it does appear that interannual differences in diversity have increased through time, with some interannual variability in diversity present in the early 2000's followed by a period of higher interannual changes diversity in the early 2010s.
 
-``` {r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=5, fig.cap="\\label{fig:preyspeciesproportions} Proportions of fish species in the Common Tern diet from 1999 to 2020 plotted against catch per unit effort (CPUE; fish per nest minute) in black."}
-## this code chunk contains the creation of the tprov df which i use for a number of figures, along with a figure showing fish species proportions in the tern diet through time plotted with relative abundance on top##
+``` {r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=3, fig.pos="H", fig.cap="\\label{fig:preyspeciesproportions} Proportions of fish species in the Common Tern diet from 1999 to 2020 plotted against catch per unit effort (CPUE; fish per nest minute) in black. "}
 
 rm(list=ls())
 library(ggplot2)
@@ -87,18 +91,59 @@ tprov<-fisheffort %>%
 #=======================================================#
 ## PLOTTING the PROPORTIONS and abundance of PREY ITEMS in THE DIET  ##
 #=======================================================#
+dfclean<-df %>%
+  dplyr::rename(size='PreySizeMM') %>%
+  dplyr::rename(prey='PreyFamily') %>%
+  dplyr::rename(method='ObservationType') %>%
+  dplyr::rename(year='Year') %>%
+  dplyr::rename(day='DayOfYear') %>%
+  dplyr::rename(week='WeekOf.Year') %>%
+  dplyr::rename(month='Month') %>%
+  dplyr::rename(watchtime='WatchDurationMM') %>%
+  dplyr::rename(nestswatched='NumberNestsObserved') %>%
+  dplyr::rename(event='Event')
+
+dfcleansub<-dfclean %>% 
+  filter(! prey %in% c("unknown","unknown fish", "invert"))
+
+#sampling effort
+effort<-dfcleansub %>%
+  filter(!IncludeForRegression %in% c("no")) %>% 
+  dplyr::mutate(`sampling effort`=(watchtime*as.numeric(nestswatched))) %>%
+  group_by(year) %>%
+  dplyr::summarise(`Effort (nest mins)`=sum(`sampling effort`, na.rm=T))
+
+#diet data
+fishsub<-dfcleansub %>%
+  filter(! event %in% c("end","start")) %>% 
+  filter(! prey %in% c("")) %>% 
+  group_by(year,prey) %>%
+  dplyr::summarise(n=n(), meansize=mean(as.numeric(size),na.rm=T), mediansize=median(as.numeric(size),na.rm=T)) %>%
+  dplyr::mutate(prop=n/sum(n))
+
+#combine and generate relative abundance
+fisheffortsub<-merge(effort,fishsub) %>%
+  mutate(`relative abundance (fish per nest min)`=(n/`Effort (nest mins)`))
+
+tprovsub<-fisheffortsub %>%
+  dplyr::select(year, prey, n, meansize, mediansize, `Effort (nest mins)`, prop, `relative abundance (fish per nest min)`) %>%
+  dplyr::rename(proportion=prop) %>%
+  dplyr::rename(abundance=`relative abundance (fish per nest min)`)
+
 
 #main five prey categories, good sample size years tern data
 #----------------------------------------------------------#
-tprovsub<-tprov %>%
+tprovsub<-tprovsub %>% 
+  filter(! prey %in% c("unknown", "unknown fish", "invert"))
+tprovsub<-tprovsub %>%
   mutate(preysub=preysub<-ifelse(grepl(paste(c("herring","lumpfish","hake","butterfish","sandlance","mackerel","bluefish","cunner","pollock","mummichog","stickleback"),
-                                             collapse="|"), prey, ignore.case=T), prey, "other/unknown")) %>%
+                                             collapse="|"), prey, ignore.case=T), prey, "other")) %>%
   filter(! year %in% c(2003, 2004, 2010, 2012))
 
 tprovsub[,9]=toupper(tprovsub[,9]) #make prey uppercase
 
 #total relative abundance, good sample years (i.e. "total relative landings") 
-tprovabundance<-tprov %>%
+tprovabundance<-tprovsub %>%
   dplyr::group_by(year) %>%
   dplyr::summarise(totalabundance=sum(abundance)) %>%
   filter(! year %in% c(2003, 2004, 2010, 2012))
@@ -123,9 +168,7 @@ ggplot()+
 
 
 
-While we do see some variability in the proportion of species ingested by terns across years, no clear trend presents itself when investigating dietary diversity over time (Shannon's Index). Figure \ref{fig:shannon} does, however, appear to show that interannual differences in diversity have increased through time, with some variability in diversity in the early 2000's followed by a period of dramatic changes in diversity between years in the early 2010s.
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=5, fig.cap="\\label{fig:shannon} Shannon's Diversity Index calculated for annual tern diet data over time."}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=3, fig.pos="H", fig.cap="\\label{fig:shannon} Proportions of fish species in the Common Tern diet from 1999 to 2020 plotted against Shannon Diversity Index in black. "}
 tprovfish<-tprov %>%
   filter(! year %in% c(2003, 2004, 2010, 2012, 2016)) %>% 
   filter(! prey %in% c("unknown", "unknown fish", "other"))
@@ -139,55 +182,46 @@ tprovshannon<-tprovfish %>%
   
 
 
-## plot shannon diversity over time
-ggplot(tprovshannon)+theme_classic()+
-  geom_point(aes(x=year,y=H))+
-  geom_line(aes(x=year,y=H))+
-  ylab("Shannon Diversity")+xlab("")#+
-  scale_x_continuous(breaks = seq(1999, 2020, by = 1))
-
+#plot shannon diversity on top of proportions in diet data  
+ggplot()+
+  geom_col(data=tprovsub,aes(x=year, y=proportion, fill=preysub))+theme_bw()+
+  ylab("Proportion of Total Observations")+xlab("Year")+
+  theme(axis.text = element_text(size=12), axis.title = element_text(size=12),
+        legend.text = element_text(size=12),legend.title = element_text(size=12),
+        panel.grid.major=element_blank(), panel.grid.minor=element_blank())+
+  scale_x_continuous(expand=c(0,0.01))+scale_y_continuous(expand=c(0,0.001))+
+  labs(fill="Prey")+
+  scale_fill_poke(pokemon="surskit", spread=12)+
+  geom_point(data=tprovshannon, aes(x=year, y=H),size=2)+
+  geom_line(data=tprovshannon, aes(x=year, y=H), size=1)+
+  scale_x_continuous(expand=c(0,0.01),name="Year")+
+  scale_y_continuous(expand=c(0,0.001),
+                     name="Proportion in diet", sec.axis=sec_axis(~./20, name="Shannon Diversity Index"))+
+  theme(legend.title = element_text( size=10), legend.text=element_text(size=10))+theme(legend.key.size = unit(0.9,"line"))
+  
 ```
 
 
+\newpage
 
-The results from the NMDS (Figure \ref{fig:preyspeciesNMDS}) showed grouping among herring, bluefish, and sandlance. Grouping was also observed between mummichog, butterfish, and mackerel, and between lumpfish and hake (Figure \ref{fig:preyspeciesNMDS}). The three time periods overlaid on the ordination overlap to some extent, indicating that the tern diet community has shifted only slightly over time (Figure \ref{fig:preyspeciesNMDS}).
+The results from the NMDS (Figure \ref{fig:preyspeciesNMDS}) showed some associations between fish species in the tern diet. Specifically, strong grouping appeared among herring, bluefish, and sandlance and between lumpfish and hake. Weaker grouping was also observed among butterfish, mummichog, and mackerel, with cunner also positively associated with the group (Figure \ref{fig:preyspeciesNMDS}). The three time periods overlaid on the ordination all overlap one another, with the central time period (2007-2013) entirely contained within the other two. The earliest (1999-2006) and latest (2014-2020) time periods do show some distinction from one another, indicating that the tern diet community may have shifted slightly over time (Figure \ref{fig:preyspeciesNMDS}).
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=5, fig.cap="\\label{fig:preyspeciesNMDS} Plot showing NMDS results for Common Tern diet data from 1999 to 2020."}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=6, fig.pos="H", fig.cap="\\label{fig:preyspeciesNMDS} Plot showing NMDS results for Common Tern diet data from 1999 to 2020. Colors indicate time period and elipses encompass 95% of datapoints from each period."}
 
 load(file = "globalenv.RData")
 myord
 
 ```
 
-### Herring and Hake Case Study
-
-Hake in the seabird diet appear to decrease linearly over time, with historic (1999) number dropping to nearly half of their values by the end of the timeseries (Figure \ref{fig:HerringandHakePopulationTrendsLinearModelFacets}). Herring, however, do not appaer to follow any obvious trend, but rather fluxuate significantly each year (Figure \ref{fig:HerringandHakePopulationTrendsLinearModelFacets}). Early in the timeseries, the abundances of the two species in the tern diet were contradictory (i.e. when herring was high, hake was low, and visa versa), while the two began to mirror one another closely in 2009 (Figure \ref{fig:HerringandHakePopulationTrendsLinearModelFacets}).
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=5, fig.cap="\\label{fig:HerringandHakePopulationTrendsLinearModelFacets} Total catch per unit effort (CPUE; fish per nest minute) of herring and hake by terns from 1999 to 2020 fit with linear models."}
-
-# population size over time facet linear model
-tprovherringandhake<-subset(tprov, prey=="herring" | prey=="hake")
-tprovherringandhake<-tprovherringandhake %>% 
-    filter(! year %in% c(2003, 2004, 2010, 2012))
 
 
-ggplot()+theme_classic()+
-    geom_smooth(data=tprovherringandhake, aes(x=year, y=abundance, color=prey), method="lm", level=0.95, fill="gray80")+ 
-  geom_point(data=tprovherringandhake, aes(x=year, y=abundance, color=prey),size=3)+
-  scale_color_manual(values=c("indianred","cadetblue4"))+ 
-  theme(axis.text = element_text(size=15), axis.title = element_text(size=15),
-        legend.text = element_text(size=15),legend.title = element_text(size=15))+
-  scale_x_continuous(expand=c(0,0.01),name="Year")+
-  scale_y_continuous(expand=c(0,0.001),
-                     name="abundance (total fish/nest mins)")+
-  theme(legend.title = element_blank())+
-  scale_x_continuous(breaks = seq(2000, 2020, by = 4))+facet_wrap(~prey)+
-  theme(strip.background = element_blank(), strip.text=element_blank())+
-  theme(legend.position = "top", legend.text=element_text(size=20))
+\newpage
 
-```
+## Case Study: herrings and hakes
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=5, fig.cap="\\label{fig:HerringandHakePopulationTrendsLine} Total catch per unit effort (CPUE; fish per nest minute) of herring and hake by terns from 1999 to 2020."}
+Early in the timeseries, the abundances of hake and herring species in the tern diet were contradictory (i.e. when one was high, the other was low), while the two began to instead mirror one another in 2009 (Figure \ref{fig:HerringandHakePopulationTrendsLine}). When abundance is regressed linearly against time for the two species, hake abundance in the seabird diet appears to fit the model well, decreasing over time with historic (1999) numbers dropping to nearly half of their values by the end of the timeseries (Figure \ref{fig:HerringandHakePopulationTrendsLinearModelFacets}). Herring abundances, however, do not appaer to follow a linear trend, fluxuating significantly over time in no clear pattern (Figure \ref{fig:HerringandHakePopulationTrendsLinearModelFacets}).
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=3.5, fig.pos="H", fig.cap="\\label{fig:HerringandHakePopulationTrendsLine} Total catch per unit effort (CPUE; fish per nest minute) of herring and hake by Common Terns from 1999 to 2020."}
 
 # population size over time facet linear model
 tprovherringandhake<-subset(tprov, prey=="herring" | prey=="hake")
@@ -212,9 +246,36 @@ ggplot()+theme_classic()+
 ```
 
 
-The size of herring ingested by terns appears to increase over the timeseries, with the entire size range ingested also increasing over that time (Figure \ref{fig:herringSizeMultPane} and Figure \ref{fig:HerringSizeSinglePane}). 
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=5, fig.cap="\\label{fig: herringSizeMultPane} Annual size distribution of herrings caught by Common Terns from 1999 to 2020. "}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=4, fig.pos="H", fig.cap="\\label{fig:HerringandHakePopulationTrendsLinearModelFacets} Total catch per unit effort (CPUE; fish per nest minute) of herring and hake by Common Terns from 1999 to 2020 fit with linear models."}
+
+# population size over time facet linear model
+tprovherringandhake<-subset(tprov, prey=="herring" | prey=="hake")
+tprovherringandhake<-tprovherringandhake %>% 
+    filter(! year %in% c(2003, 2004, 2010, 2012))
+
+
+ggplot()+theme_classic()+
+    geom_smooth(data=tprovherringandhake, aes(x=year, y=abundance, color=prey), method="lm", level=0.95, fill="gray80")+ 
+  geom_point(data=tprovherringandhake, aes(x=year, y=abundance, color=prey),size=3)+
+  scale_color_manual(values=c("indianred","cadetblue4"))+ 
+  theme(axis.text = element_text(size=10), axis.title = element_text(size=12))+
+  scale_x_continuous(expand=c(0,0.01),name="Year")+
+  scale_y_continuous(expand=c(0,0.001),
+                     name="abundance (total fish/nest mins)")+
+  theme(legend.title = element_blank())+
+  scale_x_continuous(breaks = seq(2000, 2020, by = 4))+facet_wrap(~prey)+
+  theme(strip.background = element_blank(), strip.text=element_blank())+
+  theme(legend.position = "top", legend.text=element_text(size=12))
+
+```
+
+
+\newpage
+The sizes of herrings ingested by terns appears to have increased over time, with herring averaging ~50mm in size in the early 2000's and with those later in the time series averaging ~100mm. The overall range of sizes ingested also appears to have broadened over time (Figure \ref{fig:HerringSizeFacet}; Figure \ref{fig:HerringSizeSinglePane}). 
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=3.5, fig.pos="H", fig.cap="\\label{fig:HerringSizeFacet} Annual size distribution of herrings caught by Common Terns from 1999 to 2020. "}
 # herring size over time 
 herringsub<-dfclean %>%
   filter(! year %in% c(2003, 2004, 2010, 2012, 2006, 2017)) %>%  #2006 and 2017 have <15 herring samples
@@ -231,10 +292,11 @@ ggplot(herringsub)+theme_classic()+
   scale_color_manual(values=mycolors,name="year")+
   xlab("Herring Length (mm)")+
   guides(color=guide_legend("year"))+
-  facet_wrap(~year)
+  facet_wrap(~year)+theme(legend.key.size = unit(1,"line"))
 ```
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=5, fig.cap="\\label{fig:HerringSizeSinglePane} Annual size distribution of herrings caught by Common Terns from 1999 to 2020."}
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=3.5, fig.pos="H", fig.cap="\\label{fig:HerringSizeSinglePane} Annual size distribution of herrings caught by Common Terns from 1999 to 2020."}
 #single pane
 ggplot(herringsub)+theme_classic()+
   geom_density(aes(x=size, color=as.character(year), fill=as.character(year)),
@@ -242,13 +304,15 @@ ggplot(herringsub)+theme_classic()+
   scale_fill_manual(values=mycolors, name="year")+
   scale_color_manual(values=mycolors, name="year")+
   xlab("Herring Length (mm)")+
-  guides(color=guide_legend("year"))
+  guides(color=guide_legend("year"))+theme(legend.key.size = unit(1,"line"))
 ```
 
 
-Hake follow a similar trend trend, with sizes increasing over time, though 2020 sizes appear to return to historic levels. Unlike in herring, the overall size distribution of hake does not seem to have broadened over time (Figures \ref{fig:hakeSizeMultPane} and \ref{fig:hakeSizeSinglePane}).
+\newpage
+Hake follow a similar trend, with sizes increasing from around 25mm at the beginning of the timeseries to around 50mm toward the end, though 2020 sizes do appear to break this trend by returning to historic levels. Unlike in herring, the overall size range does not seem to have broadened much over time (Figure \ref{fig:hakeSizeFacet}; Figure \ref{fig:hakeSizeSinglePane}).
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=5, fig.cap="\\label{fig: hakeSizeMultPane} Annual size distribution of hakes caught by Common Terns from 1999 to 2020."}
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=3.5, fig.pos="H", fig.cap="\\label{fig:hakeSizeFacet} Annual size distribution of hakes caught by Common Terns from 1999 to 2020."}
 
 # hake size over time 
 hakesub<-dfclean %>%
@@ -265,12 +329,12 @@ ggplot(hakesub)+theme_classic()+
                adjust=3,alpha=0.7,size=1)+
   scale_fill_manual(values=mycolors,name="year")+
   scale_color_manual(values=mycolors,name="year")+
-  xlab("Herring Length (mm)")+
+  xlab("Hake Length (mm)")+
   guides(color=guide_legend("year"))+
-  facet_wrap(~year)
+  facet_wrap(~year)+theme(legend.key.size = unit(1,"line"))
 ```
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=5, fig.cap="\\label{fig:hakeSizeSinglePane} Annual size distribution of hakes caught by Common Terns from 1999 to 2020."}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width=8,fig.height=3.5, fig.pos="H", fig.cap="\\label{fig:hakeSizeSinglePane} Annual size distribution of hakes caught by Common Terns from 1999 to 2020."}
 #single pane
 ggplot(hakesub)+theme_classic()+
   geom_density(aes(x=size, color=as.character(year), fill=as.character(year)),
@@ -278,15 +342,13 @@ ggplot(hakesub)+theme_classic()+
   scale_fill_manual(values=mycolors, name="year")+
   scale_color_manual(values=mycolors, name="year")+
   xlab("Hake Length (mm)")+
-  guides(color=guide_legend("year"))
+  guides(color=guide_legend("year"))+theme(legend.key.size = unit(1,"line"))
 
 ```
 
 
-
-
+\newpage
 ## DISCUSSION
-
 -tern diet community appears to vary across years
 -species groupings from NMDS
 -size results/ potential use of terns for fisheries monitoring
