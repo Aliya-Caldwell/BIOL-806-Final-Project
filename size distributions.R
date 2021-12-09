@@ -97,7 +97,7 @@ ggplot(herringsub)+theme_bw()+
 #-----------------------------------------------------#
 
 tprovsubsize<-tprov %>% 
-  filter(prey %in% c("herring","hake","butterfish","sandlance","mackerel"))
+  filter(prey %in% c("herring","hake","butterfish","sandlance","mackerel")) 
 
 ggplot(tprovsubsize)+theme_bw()+
   geom_point(aes(x=year,y=meansize, color=prey))+
@@ -108,28 +108,33 @@ ggplot(tprovsubsize)+theme_bw()+
 #herring
 #-------
 tprovsubsizeherr<-tprov %>% 
-  filter(prey %in% c("herring"))
+  filter(prey %in% c("herring")) %>% 
+  filter(! year %in% c(2003, 2004, 2010, 2012, 2006, 2017))
 
-
-
-ggplot(tprovsubsizeherr)+theme_bw()+
+ggplot(tprovsubsizeherr)+theme_classic()+
   geom_point(aes(x=year,y=meansize, color=prey))+
-  geom_line(aes(x=year,y=meansize, color=prey))+
   geom_point(aes(x=year,y=mediansize, color=prey), pch=21)+
-  geom_line(aes(x=year,y=mediansize, color=prey), linetype="dashed")
+  scale_color_manual(values=c("cadetblue4"))+ 
+  geom_smooth(data=tprovsubsizeherr, aes(x=year, y=mediansize, color=prey), method="lm", level=0.95, linetype = "dashed", fill="gray80")+
+  ylab("size (mm)")+
+  geom_smooth(data=tprovsubsizeherr, aes(x=year, y=meansize, color=prey), method="lm", level=0.95, fill="gray50")+theme(legend.position="none")
 
 
 
 #hake
 #-------
 tprovsubsizehake<-tprov %>% 
-  filter(prey %in% c("hake"))
+  filter(prey %in% c("hake")) %>% 
+  filter(! year %in% c(2003, 2004, 2010, 2012))
 
-ggplot(tprovsubsizehake)+theme_bw()+
+
+ggplot(tprovsubsizehake)+theme_classic()+
   geom_point(aes(x=year,y=meansize, color=prey))+
-  geom_line(aes(x=year,y=meansize, color=prey))+
   geom_point(aes(x=year,y=mediansize, color=prey), pch=21)+
-  geom_line(aes(x=year,y=mediansize, color=prey), linetype="dashed")
+  scale_color_manual(values=c("indianred"))+ 
+  geom_smooth(data=tprovsubsizehake, aes(x=year, y=mediansize, color=prey), method="lm", level=0.95, linetype = "dashed", fill="gray80")+
+  ylab("size (mm)")+
+  geom_smooth(data=tprovsubsizehake, aes(x=year, y=meansize, color=prey), method="lm", level=0.95, fill="gray50")+theme(legend.position="none")
 
 
 
